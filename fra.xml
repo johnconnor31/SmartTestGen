@@ -1,0 +1,15 @@
+<messages>
+<note id="p501">
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+
+<note id="p502">
+  <to type='friend'>Jani</to>
+  <from type='enemy'>Tove</from>
+  <heading font='TimesOldRoman' of='thisXml' meaning='at The Helm'>Re: Reminder</heading>
+  <body think='want to ' will='go to Gym' or='workout in room'>I will not!</body>
+</note>
+</messages>
