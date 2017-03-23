@@ -1,0 +1,339 @@
+<grid checkSum="87-213-182-114-81-204-153-239-191-189-239-191-189-239-191-189-97-239-191-189-4-239-191-189-69-124" name="DE" xmlTag="DE" caption="Deal entry" messageID="FRTE_FORM1_DEFAULT_DE_GRID_DE">
+  <columns>
+    <column name="H_Description1" caption="Description" style="Description" enabled="false" messageID="FRTE_FORM1_DEFAULT_DE_COLUMN_H_DESCRIPTION1"></column>
+    <column name="H_Value1" caption="Value" style="Value" enabled="true" decodeColumnName="H_Decode1" messageID="FRTE_FORM1_DEFAULT_DE_COLUMN_H_VALUE1"></column>
+    <column name="H_Decode1" caption="Decode" style="Decode" enabled="false" messageID="FRTE_FORM1_DEFAULT_DE_COLUMN_H_DECODE1"></column>
+  </columns>
+  <rows>
+    <row name="Branch" xmlTag="Branch" leaveCellFunctionCode="Branch" caption="Branch" helpId="Br" lookup="QBRL" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BRANCH"></row>
+    <row name="Dealno" xmlTag="Dealno" leaveCellFunctionCode="Dealno" caption="Deal no" helpId="Deal no" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="8" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DEALNO"></row>
+    <row name="Product" xmlTag="Product" leaveCellFunctionCode="Product" caption="Product code" helpId="Product code" lookup="QPRD" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="6" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PRODUCT">
+      <cells>
+        <cell defaultValue="FRA">
+          <comboBox dropDownList="false">
+            <comboBoxItem value="FRA" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="ProdType" xmlTag="ProdType" leaveCellFunctionCode="ProdType" caption="Product type" helpId="Product type" lookup="QPRT" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PRODTYPE">
+      <cells>
+        <cell defaultValue="FB">
+          <comboBox dropDownList="false">
+            <comboBoxItem value="FB" />
+            <comboBoxItem value="FS" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="Trader" xmlTag="Trader" caption="Trader" helpId="Trader" lookup="QTRD" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_TRADER">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="DealDate" xmlTag="DealDate" leaveCellFunctionCode="DealDate" caption="Deal date" helpId="Deal date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DEALDATE" formatter="Date"></row>
+    <row name="SettleDate" xmlTag="SettleDate" leaveCellFunctionCode="SettleDate" caption="Settle date" helpId="Settle date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SETTLEDATE" formatter="Date"></row>
+    <row name="Customer" xmlTag="Customer" leaveCellFunctionCode="Customer" caption="Customer" helpId="Customer" lookup="QCST" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CUSTOMER">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="Broker" xmlTag="Broker" leaveCellFunctionCode="Broker" caption="Broker" helpId="Broker" lookup="QBKR" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BROKER">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="RateCode" xmlTag="RateCode" leaveCellFunctionCode="RateCode" caption="Rate code" helpId="Rate code" lookup="QRTC" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="7" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RATECODE" formatter="NoFormatter">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CCY" xmlTag="CCY" leaveCellFunctionCode="CCY" caption="Currency" helpId="CCY" lookup="QCCY" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CCY">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CCYAmount" xmlTag="CCYAmount" leaveCellFunctionCode="CCYAmount" caption="Currency amount" helpId="CCY amount" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="29" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CCYAMOUNT" formatter="Amount"></row>
+    <row name="InterestRate" xmlTag="InterestRate" leaveCellFunctionCode="InterestRate" caption="Interest rate (%)" helpId="Interest rate (%)" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTRATE" formatter="Rate"></row>
+    <row name="SpreadRate" xmlTag="SpreadRate" leaveCellFunctionCode="SpreadRate" caption="Spread rate (%)" helpId="Spread rate (%)" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SPREADRATE" formatter="Rate"></row>
+    <row name="Basis" xmlTag="Basis" caption="Interest basis" helpId="Interest basis" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="7" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BASIS">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="A360" />
+            <comboBoxItem value="A365" />
+            <comboBoxItem value="ACTUAL" />
+            <comboBoxItem value="BOND" />
+            <comboBoxItem value="EBOND" />
+            <comboBoxItem value="IBOND" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="RateSource" xmlTag="RateSource" caption="Rate source" helpId="Rate source" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="40" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RATESOURCE" formatter="Rate"></row>
+    <row name="RateType" xmlTag="RateType" caption="Rate type" helpId="Rate type" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="5" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RATETYPE" formatter="Rate"></row>
+    <row name="DesigMaturity" xmlTag="DesigMaturity" caption="Designated maturity" helpId="Designated maturity" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DESIGMATURITY"></row>
+    <row name="FixingDate" xmlTag="FixingDate" caption="Fixing date" leaveCellFunctionCode="FixingDate" helpId="Fixing date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FIXINGDATE" formatter="Date"></row>
+    <row name="InterestStartDate" xmlTag="InterestStartDate" leaveCellFunctionCode="InterestStartDate" caption="Interest period start date" helpId="Interest start date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTSTARTDATE" formatter="Date">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false">
+            <comboBoxItem value="1M" />
+            <comboBoxItem value="2M" />
+            <comboBoxItem value="3M" />
+            <comboBoxItem value="4M" />
+            <comboBoxItem value="5M" />
+            <comboBoxItem value="6M" />
+            <comboBoxItem value="7M" />
+            <comboBoxItem value="8M" />
+            <comboBoxItem value="9M" />
+            <comboBoxItem value="10M" />
+            <comboBoxItem value="11M" />
+            <comboBoxItem value="1Y" />
+            <comboBoxItem value="2Y" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="InterestEndDate" xmlTag="InterestEndDate" leaveCellFunctionCode="InterestEndDate" caption="Interest period end date" helpId="Interest end date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTENDDATE" formatter="Date">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false">
+            <comboBoxItem value="1M" />
+            <comboBoxItem value="2M" />
+            <comboBoxItem value="3M" />
+            <comboBoxItem value="4M" />
+            <comboBoxItem value="5M" />
+            <comboBoxItem value="6M" />
+            <comboBoxItem value="7M" />
+            <comboBoxItem value="8M" />
+            <comboBoxItem value="9M" />
+            <comboBoxItem value="10M" />
+            <comboBoxItem value="11M" />
+            <comboBoxItem value="12M" />
+            <comboBoxItem value="13M" />
+            <comboBoxItem value="14M" />
+            <comboBoxItem value="15M" />
+            <comboBoxItem value="16M" />
+            <comboBoxItem value="17M" />
+            <comboBoxItem value="18M" />
+            <comboBoxItem value="19M" />
+            <comboBoxItem value="20M" />
+            <comboBoxItem value="21M" />
+            <comboBoxItem value="22M" />
+            <comboBoxItem value="23M" />
+            <comboBoxItem value="24M" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FeeCCY" xmlTag="FeeCCY" caption="Fee currency" helpId="CCY" lookup="QCCY" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FEECCY">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FeeAmount" xmlTag="FeeAmount" leaveCellFunctionCode="FeeAmount" caption="Fee amount" helpId="Fee amount" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="29" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FEEAMOUNT" formatter="Amount"></row>
+    <row name="FeeRate" xmlTag="FeeRate" leaveCellFunctionCode="FeeRate" caption="Fee rate (%)" helpId="Fee rate (%)" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FEERATE" formatter="Rate"></row>
+    <row name="CostCenter" xmlTag="CostCenter" caption="Cost center" helpId="Cost center" lookup="QCOS" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_COSTCENTER">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="Portfolio" xmlTag="Portfolio" caption="Portfolio" helpId="Portfolio" lookup="QPOR" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PORTFOLIO">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="Tenor" xmlTag="Tenor" caption="Tenor" helpId="Tenor" lookup="QTEN" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_TENOR">
+      <cells>
+        <cell defaultValue="99">
+          <comboBox dropDownList="false">
+            <comboBoxItem value="99" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FinCenter" xmlTag="FinCenter" caption="Financial center" helpId="Financial center" lookup="QFCG" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FINCENTER"></row>
+    <row name="Text" xmlTag="Text" caption="Text" helpId="Text" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="67" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_TEXT"></row>
+    <row name="Verify" xmlTag="Verify" leaveCellFunctionCode="Verify" caption="Verify" helpId="Verify" visible="true" enabled="true" owner="Processing Options" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_VERIFY">
+      <cells>
+        <cell defaultValue="No">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes" />
+            <comboBoxItem value="No" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="AddSI" xmlTag="AddSI" leaveCellFunctionCode="AddSI" caption="Add SI" helpId="Add SI" visible="true" enabled="true" owner="Processing Options" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_ADDSI">
+      <cells>
+        <cell defaultValue="No">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes" />
+            <comboBoxItem value="No" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="TradingMethod" xmlTag="TradingMethod" leaveCellFunctionCode="TradingMethod" caption="Trading method" helpId="Trading method" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="7" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_TRADINGMETHOD">
+      <cells>
+        <cell defaultValue="Trading">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Trading" />
+            <comboBoxItem value="Hedged" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="SuppressConfirm" xmlTag="SuppressConfirm" caption="Suppress confirmation" helpId="Suppress confirmation" visible="true" enabled="true" owner="Processing Options" resetDefaults="true" maxLength="7" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SUPPRESSCONFIRM">
+      <cells>
+        <cell defaultValue="Default">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Default" />
+            <comboBoxItem value="Yes" />
+            <comboBoxItem value="No" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <!--begin jhun artf1061394-->
+    <row name="CLEARINGCYCLEINDICATOR" xmlTag="CLEARINGCYCLEINDICATOR" caption="Clearing LifeCycle" helpId="Clearing LifeCycle" visible="true" enabled="true" owner="Processing Options" resetDefaults="true" maxLength="7" spinButton="false" leaveCellFunctionCode="CLEARINGCYCLEINDICATOR" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CLEARINGCYCLEINDICATOR">
+      <cells>
+        <cell defaultValue="No">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes"></comboBoxItem>
+            <comboBoxItem value="No"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <!--end jhun artf1061394-->
+    <row name="UndSecID" xmlTag="UndSecID" caption="Underlying security ID" helpId="Underlying security id" lookup="QSEC" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="20" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDSECID"></row>
+    <row name="UndDealno" xmlTag="UndDealno" caption="Underlying dealno" helpId="Underlying dealno" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="8" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDDEALNO"></row>
+    <row name="UndSeq" xmlTag="UndSeq" caption="Underlying seq" helpId="Underlying seq" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDSEQ"></row>
+    <row name="UndProduct" xmlTag="UndProduct" caption="Underlying product" helpId="Underlying product" lookup="QPRD" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="6" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDPRODUCT">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="UndProdType" xmlTag="UndProdType" caption="Underlying prod type" helpId="Underlying prod type" lookup="QPRT" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDPRODTYPE">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="UndAcctngType" xmlTag="UndAcctngType" caption="Underlying accounting type" helpId="Underlying Accounting Type" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDACCTNGTYPE"></row>
+    <row name="UndTenor" xmlTag="UndTenor" caption="Underlying tenor" helpId="Underlying tenor" lookup="QTEN" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDTENOR"></row>
+    <row name="PayUsualID" xmlTag="PayUsualID" caption="Pay usual ID" helpId="Pay Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PAYUSUALID"></row>
+    <row name="RecUsualID" xmlTag="RecUsualID" caption="Receipt usual ID" helpId="Receipt Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RECUSUALID"></row>
+    <row name="AmortizationEndDate" xmlTag="AmortizationEndDate" leaveCellFunctionCode="AmortizationEndDate" caption="Amortization end date" helpId="Amortization end date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_AMORTIZATIONENDDATE" formatter="Date">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false">
+            <comboBoxItem value="1M" />
+            <comboBoxItem value="2M" />
+            <comboBoxItem value="3M" />
+            <comboBoxItem value="4M" />
+            <comboBoxItem value="5M" />
+            <comboBoxItem value="6M" />
+            <comboBoxItem value="7M" />
+            <comboBoxItem value="8M" />
+            <comboBoxItem value="9M" />
+            <comboBoxItem value="10M" />
+            <comboBoxItem value="11M" />
+            <comboBoxItem value="12M" />
+            <comboBoxItem value="13M" />
+            <comboBoxItem value="14M" />
+            <comboBoxItem value="15M" />
+            <comboBoxItem value="16M" />
+            <comboBoxItem value="17M" />
+            <comboBoxItem value="18M" />
+            <comboBoxItem value="19M" />
+            <comboBoxItem value="20M" />
+            <comboBoxItem value="21M" />
+            <comboBoxItem value="22M" />
+            <comboBoxItem value="23M" />
+            <comboBoxItem value="24M" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CorpTrader" xmlTag="CorpTrader" caption="Corporate Trader" helpId="Trader" lookup="QTRD" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CORPTRADER">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CorpPortfolio" xmlTag="CorpPortfolio" caption="Corporate Portfolio" helpId="Portfolio" lookup="QPOR" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CORPPORTFOLIO">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CorpCostCenter" xmlTag="CorpCostCenter" caption="Corporate Cost center" helpId="Cost center" lookup="QCOS" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CORPCOSTCENTER">
+      <cells>
+        <cell defaultValue="">
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CorpSpreadRate" xmlTag="CorpSpreadRate" leaveCellFunctionCode="CorpSpreadRate" caption="Corporate spread rate (%)" helpId="Corporate spread rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CORPSPREADRATE"></row>
+    <row name="InternalRate" xmlTag="InternalRate" leaveCellFunctionCode="InternalRate" caption="Internal rate (%)" helpId="Internal rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERNALRATE" formatter="Rate"></row>
+    <row name="BTBInd" xmlTag="BTBInd" leaveCellFunctionCode="BTBInd" caption="Back-to-back ind" helpId="Back-to-back" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBIND">
+      <cells>
+        <cell defaultValue="No">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes" />
+            <comboBoxItem value="No" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="BTBBranch" xmlTag="BTBBranch" caption="Back-to-back branch" helpId="Br" lookup="QBRL" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBBRANCH"></row>
+    <row name="BTBDealno" xmlTag="BTBDealno" caption="Back-to-back deal no" helpId="Deal no" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="8" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBDEALNO"></row>
+    <row name="BTBSeq" xmlTag="BTBSeq" caption="Back-to-back seq" helpId="Sequence" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBSEQ"></row>
+    <row name="BTBProduct" xmlTag="BTBProduct" caption="Back-to-back product code" helpId="Product code" lookup="QPRD" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="6" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPRODUCT"></row>
+    <row name="BTBProdType" xmlTag="BTBProdType" caption="Back-to-back product type" helpId="Product type" lookup="QPRT" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPRODTYPE"></row>
+    <row name="BTBTrader" xmlTag="BTBTrader" caption="Back-to-back trader" helpId="Trader" lookup="QTRD" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBTRADER"></row>
+    <row name="BTBPortfolio" xmlTag="BTBPortfolio" caption="Back-to-back portfolio" helpId="Portfolio" lookup="QPOR" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPORTFOLIO"></row>
+    <row name="BTBCostCenter" xmlTag="BTBCostCenter" caption="Back-to-back cost center" helpId="Cost center" lookup="QCOS" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBCOSTCENTER"></row>
+    <row name="BTBPayUsualID" xmlTag="BTBPayUsualID" caption="Back-to-back pay usual ID" helpId="Pay Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPAYUSUALID"></row>
+    <row name="BTBRecUsualID" xmlTag="BTBRecUsualID" caption="Back-to-back receipt usual ID" helpId="Receipt Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBRECUSUALID"></row>
+    <row name="PendingDealType" xmlTag="PendingDealType" leaveCellFunctionCode="PendingDealType" caption="Pending deal type" helpId="Pending deal type" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="16" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PENDINGDEALTYPE">
+      <cells>
+        <cell defaultValue="No">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="No" />
+            <comboBoxItem value="What If" />
+            <comboBoxItem value="Customer What If" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <!-- START HCL SIN 1076188 V3.1.0.0 -->
+    <row name="STRATID " xmlTag="STRATID" leaveCellFunctionCode="STRATID" caption="Strategy ID" helpId="Strategy ID" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" lookup="QSTI" messageID="FRTE_FORM1_DEFAULT_DE_ROW_STRATID_"></row>
+    <!-- END HCL SIN 1076188 V3.1.0.0 -->
+    <row name="DEALNOTES" xmlTag="DEALNOTES" caption="Deal notes" helpId="Deal notes" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="250" decodeType="String" leaveCellFunctionCode="DEALNOTES" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DEALNOTES"></row>
+  </rows>
+</grid>
