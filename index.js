@@ -1,10 +1,12 @@
 var fs= require('fs');
-var xml2js_reader = require('xml2js');
-var xml2jsparser = new xml2js_reader.Parser();
-fs.readFile('Fra.xml', function (err, res){
-    // console.log(res.toString());
- 	xml2jsparser.parseString(res.toString(),function(err1,res1){
-    // use .text() to get the content of a node: 
-    console.log( res1.grid.rows[0].row[0]);
- });
+var xml2js= require('xml2js');
+
+var xmlParser= new xml2js.Parser({explicitArray:false});
+
+fs.readFile('fra.xml',function(err,str){
+	console.log(err);
+	// console.log(str);
+	xmlParser.parseString(str,function(err,xmlObj){
+		console.log(xmlObj.messages.note[1].heading);
+	})
 });
