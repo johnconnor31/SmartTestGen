@@ -1,9 +1,10 @@
 var fs= require('fs');
 var xml2js= require('xml2js');
-
+var currField=0;
 var xmlParser= new xml2js.Parser({explicitArray:false});
 var iParser= new xml2js.Parser({explicitArray:false});
 var templateFields;
+var vals=[];
 fs.readFile('fra1.xml',function(err,str){
 	console.log(err);
 	// console.log(str);
@@ -24,10 +25,14 @@ fs.readFile('inputFields.xml',function(err,str){
 });
 
 function generateCases(inputParams){
-	templateFields.map(function(field){
-		console.log(field);
-		
+	templateFields.map(function(field,i){
+		console.log(field.$.xmlTag);
+		console.log(i);
+		vals.push(field.$.xmlTag);
+
+
 	})
+	writeToExcel(vals);
 
 }
 
