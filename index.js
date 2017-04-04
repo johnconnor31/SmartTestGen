@@ -6,6 +6,7 @@ var xmlParser= new xml2js.Parser({explicitArray:false});
 var iParser= new xml2js.Parser({explicitArray:false});
 var templateFields;
 var vals=[],header=[];
+
 fs.readFile('fra1.xml',function(err,str){
 	console.log(err);
 	// console.log(str);
