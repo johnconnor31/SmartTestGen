@@ -19,7 +19,9 @@ function writeHeader(vals){
 
 	});
 	 ws.columns=columns;
-	 
+	 wb.xlsx.writeFile('abc.xlsx').then(function(){
+		console.log('excel printed');	
+	});
 	
 
 }
