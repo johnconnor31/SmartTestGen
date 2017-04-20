@@ -5,11 +5,14 @@ var wb= new excel.Workbook();
 var ws= wb.addWorksheet('checking');
 var columns=[];
 // console.log(ws);
-function writeValues(vals){
+function writeValues(excelRows){
 	// console.log(ws.columns);
-	ws.addRow(vals);
+	excelRows.map(function(row,i){
+		// console.log(row[0]);
+	 ws.addRow(row);
+	});	
 	// console.log(ws.rows);
-	wb.xlsx.writeFile('abc.xlsx').then(function(){
+	wb.xlsx.writeFile('TcGenerated.xlsx').then(function(){
 		console.log('excel printed');	
 	});
 }
@@ -19,7 +22,7 @@ function writeHeader(vals){
 
 	});
 	 ws.columns=columns;
-	 wb.xlsx.writeFile('abc.xlsx').then(function(){
+	 wb.xlsx.writeFile('TcGenerated.xlsx').then(function(){
 		console.log('excel printed');	
 	});
 	
