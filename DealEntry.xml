@@ -34,8 +34,8 @@
         </cell>
       </cells>
     </row>
-    <row name="DealDate" xmlTag="DealDate" leaveCellFunctionCode="DealDate" caption="Deal date" helpId="Deal date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DEALDATE" formatter="Date"></row>
-    <row name="SettleDate" xmlTag="SettleDate" leaveCellFunctionCode="SettleDate" caption="Settle date" helpId="Settle date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SETTLEDATE" formatter="Date"></row>
+    <row name="DealDate" xmlTag="DealDate" leaveCellFunctionCode="DealDate" caption="Deal date" helpId="Deal date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="01" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DEALDATE" formatter="Date"></row>
+    <row name="SettleDate" xmlTag="SettleDate" leaveCellFunctionCode="SettleDate" caption="Settle date" helpId="Settle date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="01" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SETTLEDATE" formatter="Date"></row>
     <row name="Customer" xmlTag="Customer" leaveCellFunctionCode="Customer" caption="Customer" helpId="Customer" lookup="QCST" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CUSTOMER">
       <cells>
         <cell defaultValue="">
@@ -65,8 +65,8 @@
       </cells>
     </row>
     <row name="CCYAmount" xmlTag="CCYAmount" leaveCellFunctionCode="CCYAmount" caption="Currency amount" helpId="CCY amount" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="29" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CCYAMOUNT" formatter="Amount"></row>
-    <row name="InterestRate" xmlTag="InterestRate" leaveCellFunctionCode="InterestRate" caption="Interest rate (%)" helpId="Interest rate (%)" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTRATE" formatter="Rate"></row>
-    <row name="SpreadRate" xmlTag="SpreadRate" leaveCellFunctionCode="SpreadRate" caption="Spread rate (%)" helpId="Spread rate (%)" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SPREADRATE" formatter="Rate"></row>
+    <row name="InterestRate" xmlTag="InterestRate" leaveCellFunctionCode="InterestRate" caption="Interest rate (%)" helpId="Interest rate (%)" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="01" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTRATE" formatter="Rate"></row>
+    <row name="SpreadRate" xmlTag="SpreadRate" leaveCellFunctionCode="SpreadRate" caption="Spread rate (%)" helpId="Spread rate (%)" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_SPREADRATE" formatter="Rate"></row>
     <row name="Basis" xmlTag="Basis" caption="Interest basis" helpId="Interest basis" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="7" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BASIS">
       <cells>
         <cell defaultValue="">
@@ -84,8 +84,8 @@
     <row name="RateSource" xmlTag="RateSource" caption="Rate source" helpId="Rate source" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="40" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RATESOURCE" formatter="Rate"></row>
     <row name="RateType" xmlTag="RateType" caption="Rate type" helpId="Rate type" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="5" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RATETYPE" formatter="Rate"></row>
     <row name="DesigMaturity" xmlTag="DesigMaturity" caption="Designated maturity" helpId="Designated maturity" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_DESIGMATURITY"></row>
-    <row name="FixingDate" xmlTag="FixingDate" caption="Fixing date" leaveCellFunctionCode="FixingDate" helpId="Fixing date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FIXINGDATE" formatter="Date"></row>
-    <row name="InterestStartDate" xmlTag="InterestStartDate" leaveCellFunctionCode="InterestStartDate" caption="Interest period start date" helpId="Interest start date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTSTARTDATE" formatter="Date">
+    <row name="FixingDate" xmlTag="FixingDate" caption="Fixing date" leaveCellFunctionCode="FixingDate" helpId="Fixing date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FIXINGDATE" formatter="Date"></row>
+    <row name="InterestStartDate" xmlTag="InterestStartDate" leaveCellFunctionCode="InterestStartDate" caption="Interest period start date" helpId="Interest start date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="01" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTSTARTDATE" formatter="Date">
       <cells>
         <cell defaultValue="">
           <comboBox dropDownList="false">
@@ -106,7 +106,7 @@
         </cell>
       </cells>
     </row>
-    <row name="InterestEndDate" xmlTag="InterestEndDate" leaveCellFunctionCode="InterestEndDate" caption="Interest period end date" helpId="Interest end date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTENDDATE" formatter="Date">
+    <row name="InterestEndDate" xmlTag="InterestEndDate" leaveCellFunctionCode="InterestEndDate" caption="Interest period end date" helpId="Interest end date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="01" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERESTENDDATE" formatter="Date">
       <cells>
         <cell defaultValue="">
           <comboBox dropDownList="false">
@@ -146,7 +146,7 @@
       </cells>
     </row>
     <row name="FeeAmount" xmlTag="FeeAmount" leaveCellFunctionCode="FeeAmount" caption="Fee amount" helpId="Fee amount" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="29" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FEEAMOUNT" formatter="Amount"></row>
-    <row name="FeeRate" xmlTag="FeeRate" leaveCellFunctionCode="FeeRate" caption="Fee rate (%)" helpId="Fee rate (%)" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FEERATE" formatter="Rate"></row>
+    <row name="FeeRate" xmlTag="FeeRate" leaveCellFunctionCode="FeeRate" caption="Fee rate (%)" helpId="Fee rate (%)" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FEERATE" formatter="Rate"></row>
     <row name="CostCenter" xmlTag="CostCenter" caption="Cost center" helpId="Cost center" lookup="QCOS" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_COSTCENTER">
       <cells>
         <cell defaultValue="">
@@ -170,7 +170,7 @@
         </cell>
       </cells>
     </row>
-    <row name="FinCenter" xmlTag="FinCenter" caption="Financial center" helpId="Financial center" lookup="QFCG" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FINCENTER"></row>
+    <row name="FinCenter" xmlTag="FinCenter" caption="Financial center" helpId="Financial center" lookup="QFCG" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_FINCENTER"></row>
     <row name="Text" xmlTag="Text" caption="Text" helpId="Text" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="67" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_TEXT"></row>
     <row name="Verify" xmlTag="Verify" leaveCellFunctionCode="Verify" caption="Verify" helpId="Verify" visible="true" enabled="true" owner="Processing Options" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_VERIFY">
       <cells>
@@ -244,9 +244,9 @@
     </row>
     <row name="UndAcctngType" xmlTag="UndAcctngType" caption="Underlying accounting type" helpId="Underlying Accounting Type" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDACCTNGTYPE"></row>
     <row name="UndTenor" xmlTag="UndTenor" caption="Underlying tenor" helpId="Underlying tenor" lookup="QTEN" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_UNDTENOR"></row>
-    <row name="PayUsualID" xmlTag="PayUsualID" caption="Pay usual ID" helpId="Pay Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PAYUSUALID"></row>
-    <row name="RecUsualID" xmlTag="RecUsualID" caption="Receipt usual ID" helpId="Receipt Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RECUSUALID"></row>
-    <row name="AmortizationEndDate" xmlTag="AmortizationEndDate" leaveCellFunctionCode="AmortizationEndDate" caption="Amortization end date" helpId="Amortization end date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_AMORTIZATIONENDDATE" formatter="Date">
+    <row name="PayUsualID" xmlTag="PayUsualID" caption="Pay usual ID" helpId="Pay Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PAYUSUALID"></row>
+    <row name="RecUsualID" xmlTag="RecUsualID" caption="Receipt usual ID" helpId="Receipt Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_RECUSUALID"></row>
+    <row name="AmortizationEndDate" xmlTag="AmortizationEndDate" leaveCellFunctionCode="AmortizationEndDate" caption="Amortization end date" helpId="Amortization end date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="Date" messageID="FRTE_FORM1_DEFAULT_DE_ROW_AMORTIZATIONENDDATE" formatter="Date">
       <cells>
         <cell defaultValue="">
           <comboBox dropDownList="false">
@@ -299,8 +299,8 @@
         </cell>
       </cells>
     </row>
-    <row name="CorpSpreadRate" xmlTag="CorpSpreadRate" leaveCellFunctionCode="CorpSpreadRate" caption="Corporate spread rate (%)" helpId="Corporate spread rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CORPSPREADRATE"></row>
-    <row name="InternalRate" xmlTag="InternalRate" leaveCellFunctionCode="InternalRate" caption="Internal rate (%)" helpId="Internal rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERNALRATE" formatter="Rate"></row>
+    <row name="CorpSpreadRate" xmlTag="CorpSpreadRate" leaveCellFunctionCode="CorpSpreadRate" caption="Corporate spread rate (%)" helpId="Corporate spread rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_CORPSPREADRATE"></row>
+    <row name="InternalRate" xmlTag="InternalRate" leaveCellFunctionCode="InternalRate" caption="Internal rate (%)" helpId="Internal rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="01" spinButton="true" spinIncrement="1" messageID="FRTE_FORM1_DEFAULT_DE_ROW_INTERNALRATE" formatter="Rate"></row>
     <row name="BTBInd" xmlTag="BTBInd" leaveCellFunctionCode="BTBInd" caption="Back-to-back ind" helpId="Back-to-back" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBIND">
       <cells>
         <cell defaultValue="No">
@@ -319,8 +319,8 @@
     <row name="BTBTrader" xmlTag="BTBTrader" caption="Back-to-back trader" helpId="Trader" lookup="QTRD" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBTRADER"></row>
     <row name="BTBPortfolio" xmlTag="BTBPortfolio" caption="Back-to-back portfolio" helpId="Portfolio" lookup="QPOR" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="4" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPORTFOLIO"></row>
     <row name="BTBCostCenter" xmlTag="BTBCostCenter" caption="Back-to-back cost center" helpId="Cost center" lookup="QCOS" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBCOSTCENTER"></row>
-    <row name="BTBPayUsualID" xmlTag="BTBPayUsualID" caption="Back-to-back pay usual ID" helpId="Pay Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPAYUSUALID"></row>
-    <row name="BTBRecUsualID" xmlTag="BTBRecUsualID" caption="Back-to-back receipt usual ID" helpId="Receipt Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBRECUSUALID"></row>
+    <row name="BTBPayUsualID" xmlTag="BTBPayUsualID" caption="Back-to-back pay usual ID" helpId="Pay Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBPAYUSUALID"></row>
+    <row name="BTBRecUsualID" xmlTag="BTBRecUsualID" caption="Back-to-back receipt usual ID" helpId="Receipt Usual ID" lookup="QSSI4" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="01" spinButton="false" decodeType="String" messageID="FRTE_FORM1_DEFAULT_DE_ROW_BTBRECUSUALID"></row>
     <row name="PendingDealType" xmlTag="PendingDealType" leaveCellFunctionCode="PendingDealType" caption="Pending deal type" helpId="Pending deal type" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="16" spinButton="false" messageID="FRTE_FORM1_DEFAULT_DE_ROW_PENDINGDEALTYPE">
       <cells>
         <cell defaultValue="No">

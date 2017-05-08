@@ -3,17 +3,16 @@ var fs= require('fs');
 var xml2js= require('xml2js');
 var currField=0;
 var xmlParser= new xml2js.Parser({explicitArray:false});
-var iParser= new xml2js.Parser({explicitArray:false});
-var templateFields;
+var templateFieldArray;
 var inputParams;
 var vals=[],header=[],basicScenario=[],currentTC=[];
 
 fs.readFile('DealEntry.xml',function(err,str){
-	console.log(err);
+	// console.log(err);
 	// console.log(str);
 	xmlParser.parseString(str,function(err,xmlObj){
 		// console.log(xmlObj.grid.rows.row);
-		templateFields= xmlObj.grid.rows.row;
+		templateFieldArray= xmlObj.grid.rows.row;
 	})
 });
 
@@ -21,10 +20,10 @@ fs.readFile('DealEntry.xml',function(err,str){
 fs.readFile('inputFields.xml',function(err,str){
 	console.log(err);
 	// console.log(str);
-	iParser.parseString(str,function(err,xmlObj){
+	xmlParser.parseString(str,function(err,xmlObj){
 		// console.log(xmlObj.OpicsPlusRequest.Header.Message.Screens.Screen[3].DE.H_Value1);
 		inputParams=xmlObj.OpicsPlusRequest.Header.Message.Screens.Screen[3].DE.H_Value1;
-		console.log(inputParams);
+		// console.log(inputParams);
 		generateCases(inputParams);
 	
 	})
@@ -36,7 +35,6 @@ function generateCases(inputParams){
 			header.push({
 				Name:key,
 			});
-
 
 	excelDealer.wh(header);
 
@@ -50,7 +48,7 @@ function generateCases(inputParams){
 
 		
 		
-	templateFields.map(function(field,i){
+	templateFieldArray.map(function(field,i){
 		// console.log(field.$.xmlTag);
 		// if(field.cells!=undefined)
 		// 	if(field.cells["cell"].comboBox!=undefined)
@@ -122,7 +120,7 @@ function updateTC(TC,xmlTag,val){
 		if(xmlTag === key)
 		{
 			console.log(key.toString());
-			TC[pos]=val;
+			TC[pos]={value:val,color:'blue'};
 		}
 		else
 			pos++;

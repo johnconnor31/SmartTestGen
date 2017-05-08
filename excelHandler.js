@@ -18,8 +18,7 @@ function writeValues(excelRows){
 }
 function writeHeader(vals){
 	vals.map(function(val,i){
-		columns.push({header:val.Name,key:val.Name,width:val.Name.length});
-
+		columns.push({header:val.Name,width:20});
 	});
 	 ws.columns=columns;
 	 wb.xlsx.writeFile('TcGenerated.xlsx').then(function(){
