@@ -21,6 +21,7 @@ function writeHeader(vals){
 		columns.push({header:val.Name,width:20});
 	});
 	 ws.columns=columns;
+	 console.log(ws.rows);
 	 wb.xlsx.writeFile('TcGenerated.xlsx').then(function(){
 		console.log('excel printed');	
 	});
@@ -28,5 +29,5 @@ function writeHeader(vals){
 
 }
 
-module.exports.wh=writeHeader;
-module.exports.wv=writeValues;
+module.exports.writeHeader=writeHeader;
+module.exports.writeValues=writeValues;
