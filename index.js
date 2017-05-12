@@ -1,4 +1,6 @@
 const excelDealer= require('./excelHandler.js');
+var os = require('os');
+var rl = require('readline');
 var fs= require('fs');
 var xml2js= require('xml2js');
 var currField=0;
@@ -51,7 +53,7 @@ function generateCases(){
 				generateTC(tagName,"");
 				generateTC(tagName,"$#%#");
 				generateTC(tagName,"23432");
-				
+
 			}
 			else if(options['$']!=undefined)
 				generateTC(tagName,options['$'].value.toString());
@@ -62,8 +64,7 @@ function generateCases(){
 			
 			// console.log(vals);
 		});
-	
-	  excelDealer.writeValues(vals);
+
 
 }
 
@@ -72,7 +73,7 @@ function generateCases(){
 function updateTC(TC,xmlTag,val){
 	var pos=0;
 	for(var key in inputParams){
-		if(xmlTag === key)
+		if(xmlTag.toUpperCase() === key.toUpperCase())
 		{
 			console.log(key.toString());
 			TC[pos]=val;
@@ -81,7 +82,7 @@ function updateTC(TC,xmlTag,val){
 			pos++;
 	
 	}
-	console.log(TC);
+	// console.log(TC);
 
 }
 function writeHeader(){
@@ -112,3 +113,37 @@ function generateTC(tagName,value)
 	currentTC.unshift("FRA_TC_000"+noOfCases);
 	vals[noOfCases]=currentTC;
 }
+var iReader= rl.createInterface(process.stdin,process.stdout);
+iReader.on('line',function(line){
+	if(line.length==0)
+	{
+	console.log('enter'+line);
+	iReader.setPrompt('type end if finished.else,enter values\n');
+	iReader.prompt();
+}
+	else if(line.toString().indexOf('end',0)==0)
+	{
+		iReader.close();
+		excelDealer.writeValues(vals);
+	}
+	else
+	{	
+		console.log('valid'+line);
+		var tagName,value;
+		var inputs= line.toString();
+		var inputArr= line.split(' ');
+		var	currentTC= basicScenario.slice(0);
+		for(var i=0;i<inputArr.length-1;i++)
+		{
+			tagName=inputArr[i];
+			value=inputArr[i+1];
+			updateTC(currentTC,tagName,value);
+		}
+	noOfCases++;
+	vals[noOfCases]=[];
+	currentTC.unshift("FRA_TC_000"+noOfCases);
+	vals[noOfCases]=currentTC;
+}
+	
+	
+});
