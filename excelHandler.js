@@ -1,5 +1,4 @@
 var excel= require('exceljs');
-
 var wb= new excel.Workbook();
 
 var ws= wb.addWorksheet('checking');
