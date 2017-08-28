@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/johnconnor31/SmartTestGen/issues"
   },
-  "homepage": "https://github.com/johnconnor31/SmartTestGen#readme"
+  "homepage": "https://github.com/johnconnor31/SmartTestGen#readme",
+  "dependencies": {
+    "exceljs": "^0.4.6",
+    "xml2js": "^0.4.17"
+  }
 }
