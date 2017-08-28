@@ -23,7 +23,7 @@ function writeHeader(vals){
 	 ws.columns=columns;
 	 console.log(ws.rows);
 	 wb.xlsx.writeFile('TcGenerated.xlsx').then(function(){
-		console.log('excel printed');	
+		console.log('excel printed. Check TcGenerated.xlsx in your folder');	
 	});
 	
 

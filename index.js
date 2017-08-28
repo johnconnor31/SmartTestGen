@@ -6,31 +6,60 @@ var xml2js= require('xml2js');
 var currField=0;
 var xmlParser= new xml2js.Parser({explicitArray:false});
 var templateFieldArray;
-var inputParams;
+var inputHeader,inputLeg;
 var vals=[],header=[],basicScenario=[],currentTC=[];
 var noOfCases=-1;
-fs.readFile('DealEntry.xml',function(err,str){
+fs.readFile('D:\\TCGen\\SmartTestGen_new\\CapFloorLeg_template.xml',function(err,str){
 	// console.log(err);
 	// console.log(str);
 	xmlParser.parseString(str,function(err,xmlObj){
-		// console.log(xmlObj.grid.rows.row);
+		// console.log(xmlObj);
 		templateFieldArray= xmlObj.grid.rows.row;
 	})
 });
 
 
-fs.readFile('inputFields.xml',function(err,str){
-	console.log(err);
+fs.readFile('D:\\TCGen\\SmartTestGen_new\\capsandFloors_input.xml','UTF8',function(err,str){
+
+	// console.log(err);
 	// console.log(str);
 	xmlParser.parseString(str,function(err,xmlObj){
-		// console.log(xmlObj.OpicsPlusRequest.Header.Message.Screens.Screen[3].DE.H_Value1);
-		inputParams=xmlObj.OpicsPlusRequest.Header.Message.Screens.Screen[3].DE.H_Value1;
+		// console.log(err);
+		// console.log(xmlObj.OpicsPlusRequest.Message.Screens.Screen[4].CPFLLEG);
+		inputLeg=xmlObj.OpicsPlusRequest.Message.Screens.Screen[4].CPFLLEG.H_Value1;
+		inputHeader = xmlObj.OpicsPlusRequest.Message.Screens.Screen[4].CPFLHEADER.H_Value1;
 		// console.log(inputParams);
-		generateCases();
+
+		// generateCases(function(err){
+		// 	console.log('\n validation Test Cases are generated');
+		// 	console.log('\nYou can create functional test cases: Enter the following way.\n');
+		// 	console.log('Enter xmltag1 [space] value1 [space] xmltag2 [space] value2 and so on....');
+		// 	console.log('and press Enter at the end');
+		// });
+		generateFunctionalTCs();
 	
-	})
+	});
 });
-function generateCases(){
+function generateFunctionalTCs(){
+		// console.log(templateFieldArray);
+		for(var key in inputHeader)
+		if(inputHeader.hasOwnProperty(key)&& inputHeader[key]!=='' &&inputHeader[key]!=='\r\n')
+		{	
+			// console.log(key,inputHeader[key]);
+			basicScenario.push(inputHeader[key]);
+		}
+
+		for(var key in inputLeg)
+		if(inputLeg.hasOwnProperty(key)&& inputLeg[key]!=='')
+			basicScenario.push(inputLeg[key]);
+
+		// console.log(basicScenario);
+
+		
+		
+
+}
+function generateCases(callBack){
 	// console.log(templateFields);
 	writeHeader();
 	var tagName;
@@ -64,7 +93,7 @@ function generateCases(){
 			
 			// console.log(vals);
 		});
-
+	callBack();
 
 }
 
@@ -75,7 +104,7 @@ function updateTC(TC,xmlTag,val){
 	for(var key in inputParams){
 		if(xmlTag.toUpperCase() === key.toUpperCase())
 		{
-			console.log(key.toString());
+			// console.log(key.toString());
 			TC[pos]=val;
 		}
 		else
@@ -113,14 +142,12 @@ function generateTC(tagName,value)
 	currentTC.unshift("FRA_TC_000"+noOfCases);
 	vals[noOfCases]=currentTC;
 }
+
 var iReader= rl.createInterface(process.stdin,process.stdout);
 iReader.on('line',function(line){
-	if(line.length==0)
-	{
-	console.log('enter'+line);
-	iReader.setPrompt('type end if finished.else,enter values\n');
-	iReader.prompt();
-}
+	if(line.length==0){
+		console.log('Type \'end\' and press Enter if finished.Else,continue entering test cases\n');	
+	}
 	else if(line.toString().indexOf('end',0)==0)
 	{
 		iReader.close();
@@ -133,7 +160,7 @@ iReader.on('line',function(line){
 		var inputs= line.toString();
 		var inputArr= line.split(' ');
 		var	currentTC= basicScenario.slice(0);
-		for(var i=0;i<inputArr.length-1;i++)
+		for(var i=0;i<inputArr.length-1;i+=2)
 		{
 			tagName=inputArr[i];
 			value=inputArr[i+1];
@@ -143,7 +170,8 @@ iReader.on('line',function(line){
 	vals[noOfCases]=[];
 	currentTC.unshift("FRA_TC_000"+noOfCases);
 	vals[noOfCases]=currentTC;
+	console.log('Type \'end\' and press Enter if finished.Else,continue entering test cases\n');	
+
 }
-	
-	
+
 });

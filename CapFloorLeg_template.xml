@@ -1,0 +1,463 @@
+<grid checkSum="239-191-189-67-13-125-239-191-189-28-239-191-189-239-191-189-80-29-72-239-191-189-239-191-189-239-191-189-239-191-189-77" name="CPFLLEG" xmlTag="CPFLLEG" caption="Legs" messageID="SWAPCAPFLOORLEG_GRID_CPFLLEG">
+  <columns>
+    <column name="H_Description" caption="Description" style="Description" enabled="false" messageID="SWAPCAPFLOORLEG_COLUMN_H_DESCRIPTION"></column>
+    <column name="H_Value1" caption="Value" style="Value" enabled="true" decodeColumnName="H_Decode1" messageID="SWAPCAPFLOORLEG_COLUMN_H_VALUE1"></column>
+    <column name="H_Decode1" caption="Decode" style="Decode" enabled="false" messageID="SWAPCAPFLOORLEG_COLUMN_H_DECODE1"></column>
+  </columns>
+  <rows>
+    <row name="CAPFLOORIND" xmlTag="CAPFLOORIND" caption="Deal type" helpId="Deal type" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="5" spinButton="false" leaveCellFunctionCode="CAPFLOORIND" messageID="SWAPCAPFLOORLEG_ROW_CAPFLOORIND">
+      <cells>
+        <cell defaultValue="Cap" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Cap"></comboBoxItem>
+            <comboBoxItem value="Floor"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="PURCHASESALEIND" xmlTag="PURCHASESALEIND" caption="Purchase/Sale" helpId="Purchase/Sale" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="PURCHASESALEIND" messageID="SWAPCAPFLOORLEG_ROW_PURCHASESALEIND">
+      <cells>
+        <cell defaultValue="Purchase" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Purchase"></comboBoxItem>
+            <comboBoxItem value="Sale"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FIXFLOATIND" xmlTag="FIXFLOATIND" caption="Fixed/Float" helpId="Fixed/Float" visible="false" enabled="false" owner="Main" resetDefaults="true" maxLength="5" spinButton="false" leaveCellFunctionCode="FIXFLOATIND" messageID="SWAPCAPFLOORLEG_ROW_FIXFLOATIND">
+      <cells>
+        <cell defaultValue="Float" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Fixed"></comboBoxItem>
+            <comboBoxItem value="Float"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CCY" xmlTag="CCY" caption="Currency" helpId="Currency" lookup="QCCY" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" decodeType="String" leaveCellFunctionCode="CCY" messageID="SWAPCAPFLOORLEG_ROW_CCY">
+      <cells>
+        <cell>
+          <comboBox dropDownList="false">
+            <comboBoxItem value="GBP"></comboBoxItem>
+            <comboBoxItem value="USD"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CCYAMT" xmlTag="CCYAMT" caption="Currency amt" helpId="Currency amt" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="CCYAMT" messageID="SWAPCAPFLOORLEG_ROW_CCYAMT"></row>
+    <row name="STRIKERATE" xmlTag="STRIKERATE" caption="Strike rate" helpId="Strike rate" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="STRIKERATE" messageID="SWAPCAPFLOORLEG_ROW_STRIKERATE" formatter="Rate"></row>
+    <row name="RATECODE" xmlTag="RATECODE" caption="Index rate code" helpId="Rate code" lookup="QRTC" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="7" spinButton="false" decodeType="String" leaveCellFunctionCode="RATECODE" messageID="SWAPCAPFLOORLEG_ROW_RATECODE" formatter="NoFormatter">
+      <cells>
+        <cell>
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="CAPFLOORINDXRATE" xmlTag="CAPFLOORINDXRATE" caption="Cap/Floor index rate" helpId="Interest rate" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="CAPFLOORINDXRATE" messageID="SWAPCAPFLOORLEG_ROW_CAPFLOORINDXRATE" formatter="Rate"></row>
+    <row name="YIELDCURVE" xmlTag="YIELDCURVE" caption="Yield curve" helpId="Yield curve" lookup="QYLD" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="8" spinButton="false" decodeType="String" leaveCellFunctionCode="YIELDCURVE" messageID="SWAPCAPFLOORLEG_ROW_YIELDCURVE">
+      <cells>
+        <cell>
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FINCENT" xmlTag="FINCENT" caption="Fin center" helpId="Fin center" lookup="QFCG" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" leaveCellFunctionCode="FINCENT" messageID="SWAPCAPFLOORLEG_ROW_FINCENT">
+      <cells>
+        <cell>
+          <comboBox dropDownList="false"></comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="BASIS" xmlTag="BASIS" caption="Interest basis" helpId="Interest basis" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="BASIS" messageID="SWAPCAPFLOORLEG_ROW_BASIS">
+      <cells>
+        <cell defaultValue=" " columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value=" "></comboBoxItem>
+            <comboBoxItem value="A360"></comboBoxItem>
+            <comboBoxItem value="A365"></comboBoxItem>
+            <comboBoxItem value="30F360"></comboBoxItem>
+            <comboBoxItem value="NL360"></comboBoxItem>
+            <comboBoxItem value="NL365"></comboBoxItem>
+            <comboBoxItem value="ACTUAL"></comboBoxItem>
+            <comboBoxItem value="BOND"></comboBoxItem>
+            <comboBoxItem value="EBOND"></comboBoxItem>
+            <comboBoxItem value="ACT365"></comboBoxItem>
+            <comboBoxItem value="IBOND-ISDA"></comboBoxItem>
+            <comboBoxItem value="IEBOND-ISDA"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="SPREADRATE" xmlTag="SPREADRATE" caption="Spread rate " helpId="Spread rate " visible="false" enabled="false" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="SPREADRATE" messageID="SWAPCAPFLOORLEG_ROW_SPREADRATE" formatter="Rate"></row>
+    <row name="RATESOURCE" xmlTag="RATESOURCE" caption="Rate source" helpId="Rate source" visible="true" enabled="false" owner="Main" resetDefaults="true" maxLength="40" spinButton="false" leaveCellFunctionCode="RATESOURCE" messageID="SWAPCAPFLOORLEG_ROW_RATESOURCE" formatter="Rate"></row>
+    <row name="RATETYPE" xmlTag="RATETYPE" caption="Rate type" helpId="Rate type" visible="true" enabled="false" owner="Main" resetDefaults="true" maxLength="5" spinButton="false" leaveCellFunctionCode="RATETYPE" messageID="SWAPCAPFLOORLEG_ROW_RATETYPE" formatter="Rate"></row>
+    <row name="DESMAT" xmlTag="DESMAT" caption="Designated maturity" helpId="Designated maturity" visible="true" enabled="false" owner="Main" resetDefaults="true" maxLength="40" spinButton="false" leaveCellFunctionCode="DESMAT" messageID="SWAPCAPFLOORLEG_ROW_DESMAT"></row>
+    <row name="USUALID" xmlTag="USUALID" caption="Usual id" helpId="Usual id" lookup="QSSI" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="40" spinButton="false" decodeType="String" leaveCellFunctionCode="USUALID" messageID="SWAPCAPFLOORLEG_ROW_USUALID"></row>
+    <row name="DATECONV" xmlTag="DATECONV" caption="Date convention" helpId="Date convention" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="DATECONV" messageID="SWAPCAPFLOORLEG_ROW_DATECONV" formatter="Date">
+      <cells>
+        <cell defaultValue="D" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="D"></comboBoxItem>
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="S"></comboBoxItem>
+            <comboBoxItem value="P"></comboBoxItem>
+            <comboBoxItem value="EMD"></comboBoxItem>
+            <comboBoxItem value="EMS"></comboBoxItem>
+            <comboBoxItem value="EMP"></comboBoxItem>
+            <comboBoxItem value="2PW"></comboBoxItem>
+            <comboBoxItem value="3W"></comboBoxItem>
+            <comboBoxItem value="EMN"></comboBoxItem>
+            <comboBoxItem value="DIM"></comboBoxItem>
+            <comboBoxItem value="DIS"></comboBoxItem>
+            <comboBoxItem value="DIP"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="DATEDIR" xmlTag="DATEDIR" caption="Date direction" helpId="Date direction" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="DATEDIR" messageID="SWAPCAPFLOORLEG_ROW_DATEDIR" formatter="Date">
+      <cells>
+        <cell defaultValue="VF" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="VF"></comboBoxItem>
+            <comboBoxItem value="MB"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FREQ" xmlTag="FREQ" caption="Frequency" helpId="Frequency" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="FREQ" messageID="SWAPCAPFLOORLEG_ROW_FREQ">
+      <cells>
+        <cell defaultValue="A" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value=" "></comboBoxItem>
+            <comboBoxItem value="B"></comboBoxItem>
+            <comboBoxItem value="A"></comboBoxItem>
+            <comboBoxItem value="S"></comboBoxItem>
+            <comboBoxItem value="Q"></comboBoxItem>
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="W"></comboBoxItem>
+            <comboBoxItem value="D"></comboBoxItem>
+            <comboBoxItem value="28"></comboBoxItem>
+            <comboBoxItem value="91"></comboBoxItem>
+            <comboBoxItem value="182"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="PAYDAY" xmlTag="PAYDAY" caption="Payment day" helpId="Payment day" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="PAYDAY" messageID="SWAPCAPFLOORLEG_ROW_PAYDAY"></row>
+    <row name="PRINADJAMT" xmlTag="PRINADJAMT" caption="Prin adj amt" helpId="Prin adj amt" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="PRINADJAMT" messageID="SWAPCAPFLOORLEG_ROW_PRINADJAMT"></row>
+    <row name="EXCHPRININD" xmlTag="EXCHPRININD" caption="Exch prin" helpId="Exch prin" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="EXCHPRININD" messageID="SWAPCAPFLOORLEG_ROW_EXCHPRININD">
+      <cells>
+        <cell defaultValue="N" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="B"></comboBoxItem>
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="V"></comboBoxItem>
+            <comboBoxItem value="N"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="EXCHTERM" xmlTag="EXCHTERM" caption="Exchange term" helpId="Exchange term" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="8" spinButton="false" leaveCellFunctionCode="EXCHTERM" messageID="SWAPCAPFLOORLEG_ROW_EXCHTERM">
+      <cells>
+        <cell>
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Multiply"></comboBoxItem>
+            <comboBoxItem value="Divide"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="EXCHRATE" xmlTag="EXCHRATE" caption="Exchange rate" helpId="Exchange rate" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="14" spinButton="false" leaveCellFunctionCode="EXCHRATE" messageID="SWAPCAPFLOORLEG_ROW_EXCHRATE" formatter="Rate"></row>
+    <row name="FIRSTPAYDATE" xmlTag="FIRSTPAYDATE" caption="First int pay date" helpId="First int pay date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="FIRSTPAYDATE" messageID="SWAPCAPFLOORLEG_ROW_FIRSTPAYDATE" formatter="Date"></row>
+    <row name="LASTPAYDATE" xmlTag="LASTPAYDATE" caption="Last int pay date" helpId="Last int pay date" lookup="QDTE" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="LASTPAYDATE" messageID="SWAPCAPFLOORLEG_ROW_LASTPAYDATE" formatter="Date"></row>
+    <row name="CALCRULE" xmlTag="CALCRULE" caption="Int rule" helpId="Int rule" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="CALCRULE" messageID="SWAPCAPFLOORLEG_ROW_CALCRULE">
+      <cells>
+        <cell defaultValue=" " columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="WAV"></comboBoxItem>
+            <comboBoxItem value=" "></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="DEALRATE" xmlTag="DEALRATE" caption="Deal rate" helpId="Deal rate" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="DEALRATE" messageID="SWAPCAPFLOORLEG_ROW_DEALRATE" formatter="Rate"></row>
+    <row name="DEALTERMS" xmlTag="DEALTERMS" caption="Deal term" helpId="Deal term" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="DEALTERMS" messageID="SWAPCAPFLOORLEG_ROW_DEALTERMS"></row>
+    <row name="SETTCCY" xmlTag="SETTCCY" caption="Settlement ccy" helpId="Settlement ccy" lookup="QCCY" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" decodeType="String" leaveCellFunctionCode="SETTCCY" messageID="SWAPCAPFLOORLEG_ROW_SETTCCY"></row>
+    <row name="FXRATECODE" xmlTag="FXRATECODE" caption="FX rate code" helpId="FX rate code" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="7" spinButton="false" leaveCellFunctionCode="FXRATECODE" messageID="SWAPCAPFLOORLEG_ROW_FXRATECODE" formatter="NoFormatter"></row>
+    <row name="EXCHMETHOD" xmlTag="EXCHMETHOD" caption="Exchange method" helpId="Exchange method" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="EXCHMETHOD" messageID="SWAPCAPFLOORLEG_ROW_EXCHMETHOD"></row>
+    <row name="SETTDAYS" xmlTag="SETTDAYS" caption="Settlement days" helpId="Settlement days" visible="true" enabled="true" owner="Main" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="SETTDAYS" messageID="SWAPCAPFLOORLEG_ROW_SETTDAYS"></row>
+    <row name="FIXAMT" xmlTag="FIXAMT" caption="Fixed payment amt" helpId="Fixed payment amt" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="FIXAMT" messageID="SWAPCAPFLOORLEG_ROW_FIXAMT"></row>
+    <row name="DELTA" xmlTag="DELTA" caption="Delta" helpId="Delta" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="DELTA" messageID="SWAPCAPFLOORLEG_ROW_DELTA"></row>
+    <row name="VOLATILITY" xmlTag="VOLATILITY" caption="Volatility" helpId="VOLATILITY" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="VOLITILITY" messageID="SWAPCAPFLOORLEG_ROW_VOLATILITY"></row>
+    <row name="YCSEQ" xmlTag="YCSEQ" caption="YC shift seq" helpId="YC shift seq" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="14" spinButton="false" leaveCellFunctionCode="YCSEQ" messageID="SWAPCAPFLOORLEG_ROW_YCSEQ"></row>
+    <row name="YCQUOTE" xmlTag="YCQUOTE" caption="YC quote type" helpId="YC quote type" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="5" spinButton="false" leaveCellFunctionCode="YCQUOTE" messageID="SWAPCAPFLOORLEG_ROW_YCQUOTE">
+      <cells>
+        <cell defaultValue="Mid" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Bid"></comboBoxItem>
+            <comboBoxItem value="Mid"></comboBoxItem>
+            <comboBoxItem value="Offer"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="BTBUSUALID" xmlTag="BTBUSUALID" caption="BTB usual id" helpId="BTB usual id" lookup="QSSI" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" leaveCellFunctionCode="BTBUSUALID" messageID="SWAPCAPFLOORLEG_ROW_BTBUSUALID"></row>
+    <row name="RESETDATECONV" xmlTag="RESETDATECONV" caption="Rate revision pay rule" helpId="Rate revision pay rule" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="RESETDATECONV" messageID="SWAPCAPFLOORLEG_ROW_RESETDATECONV" formatter="Rate">
+      <cells>
+        <cell defaultValue=" " columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value=" "></comboBoxItem>
+            <comboBoxItem value="D"></comboBoxItem>
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="S"></comboBoxItem>
+            <comboBoxItem value="P"></comboBoxItem>
+            <comboBoxItem value="DIM"></comboBoxItem>
+            <comboBoxItem value="DIS"></comboBoxItem>
+            <comboBoxItem value="DIP"></comboBoxItem>
+            <comboBoxItem value="3W"></comboBoxItem>
+            <comboBoxItem value="2PW"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="RESETFREQ" xmlTag="RESETFREQ" caption="Rate revision cycle" helpId="Rate revision cycle" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="RESETFREQ" messageID="SWAPCAPFLOORLEG_ROW_RESETFREQ" formatter="NoFormatter">
+      <cells>
+        <cell>
+          <comboBox dropDownList="true">
+            <comboBoxItem value=" "></comboBoxItem>
+            <comboBoxItem value="B"></comboBoxItem>
+            <comboBoxItem value="A"></comboBoxItem>
+            <comboBoxItem value="S"></comboBoxItem>
+            <comboBoxItem value="Q"></comboBoxItem>
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="W"></comboBoxItem>
+            <comboBoxItem value="D"></comboBoxItem>
+            <comboBoxItem value="28"></comboBoxItem>
+            <comboBoxItem value="91"></comboBoxItem>
+            <comboBoxItem value="182"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="REVDAY" xmlTag="REVDAY" caption="Revision day" helpId="Revision day" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="REVDAY" messageID="SWAPCAPFLOORLEG_ROW_REVDAY"></row>
+    <row name="REFIXDAYS" xmlTag="REFIXDAYS" caption="Refix days" helpId="Refix days" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="REFIXDAYS" messageID="SWAPCAPFLOORLEG_ROW_REFIXDAYS"></row>
+    <row name="COMPOUND" xmlTag="COMPOUND" caption="Compound" helpId="Compound" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="COMPOUND" messageID="SWAPCAPFLOORLEG_ROW_COMPOUND">
+      <cells>
+        <cell defaultValue="No" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="No"></comboBoxItem>
+            <comboBoxItem value="No Spread"></comboBoxItem>
+            <comboBoxItem value="Spread"></comboBoxItem>
+            <comboBoxItem value="Flat"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="RATEREVIND" xmlTag="RATEREVIND" caption="Rate rev first last" helpId="Rate rev first last" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="5" spinButton="false" leaveCellFunctionCode="RATEREVIND" messageID="SWAPCAPFLOORLEG_ROW_RATEREVIND" formatter="Rate">
+      <cells>
+        <cell defaultValue="First" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Last" />
+            <comboBoxItem value="First" />
+            <comboBoxItem value="Fra" />
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="FIRSTRESET" xmlTag="FIRSTRESET" caption="First reset valid" helpId="First reset valid" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="FIRSTRESET" messageID="SWAPCAPFLOORLEG_ROW_FIRSTRESET">
+      <cells>
+        <cell defaultValue="No" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes"></comboBoxItem>
+            <comboBoxItem value="No"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="MODSCHED" xmlTag="MODSCHED" caption="Modified schedule" helpId="Modified schedule" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="MODSCHED" messageID="SWAPCAPFLOORLEG_ROW_MODSCHED"></row>
+    <row name="INTERNALRATE" xmlTag="INTERNALRATE" caption="Internal rate" helpId="Internal rate" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="INTERNALRATE" messageID="SWAPCAPFLOORLEG_ROW_INTERNALRATE" formatter="Rate"></row>
+    <row name="CORPSPREADRATE" xmlTag="CORPSPREADRATE" caption="Corporate spread rate" helpId="Corporate spread rate" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="CORPSPREADRATE" messageID="SWAPCAPFLOORLEG_ROW_CORPSPREADRATE"></row>
+    <row name="CORPSPREADAMT" xmlTag="CORPSPREADAMT" caption="Corporate spread amt" helpId="Corporate spread amt" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="20" spinButton="false" leaveCellFunctionCode="CORPSPREADAMT" messageID="SWAPCAPFLOORLEG_ROW_CORPSPREADAMT"></row>
+    <row name="NOTACCTIND" xmlTag="NOTACCTIND" caption="Notional acctng" helpId="Notional acctng" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="NOTACCTIND" messageID="SWAPCAPFLOORLEG_ROW_NOTACCTIND">
+      <cells>
+        <cell defaultValue="Yes" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes"></comboBoxItem>
+            <comboBoxItem value="No"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="STARTDATE" xmlTag="STARTDATE" caption="Start date" helpId="Start date" lookup="QDTE" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="STARTDATE" messageID="SWAPCAPFLOORLEG_ROW_STARTDATE" formatter="Date"></row>
+    <row name="UFEEPRIND" xmlTag="UFEEPRIND" caption="Premium pay/rec" helpId="Upfront fee pay/rec" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" leaveCellFunctionCode="UFEEPRIND" messageID="SWAPCAPFLOORLEG_ROW_UFEEPRIND">
+      <cells>
+        <cell defaultValue=" " columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Pay"></comboBoxItem>
+            <comboBoxItem value="Receive"></comboBoxItem>
+            <comboBoxItem value=" "></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="UFEEACCTMETHOD" xmlTag="UFEEACCTMETHOD" caption="Premium acctng method" helpId="Upfront fee acctng method" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="UFEEACCTMETHOD" messageID="SWAPCAPFLOORLEG_ROW_UFEEACCTMETHOD">
+      <cells>
+        <cell defaultValue=" ">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="A"></comboBoxItem>
+            <comboBoxItem value="C"></comboBoxItem>
+            <comboBoxItem value=" "></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="UFEECCY" xmlTag="UFEECCY" caption="Premium ccy" helpId="Upfront fee ccy" lookup="QCCY" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" decodeType="String" leaveCellFunctionCode="UFEECCY" messageID="SWAPCAPFLOORLEG_ROW_UFEECCY"></row>
+    <row name="UFEERATE" xmlTag="UFEERATE" caption="Premium %" helpId="Upfront fee rate" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="UFEERATE" messageID="SWAPCAPFLOORLEG_ROW_UFEERATE"></row>
+    <row name="UFEEAMT" xmlTag="UFEEAMT" caption="Premium amt" helpId="Upfront fee amt" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="UFEEAMT" messageID="SWAPCAPFLOORLEG_ROW_UFEEAMT"></row>
+    <row name="UFEEFINCENT" xmlTag="UFEEFINCENT" caption="Premium fin ctr" helpId="Upfront fee fin ctr" lookup="QFCG" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="String" leaveCellFunctionCode="UFEEFINCENT" messageID="SWAPCAPFLOORLEG_ROW_UFEEFINCENT"></row>
+    <row name="UFEESETTDATE" xmlTag="UFEESETTDATE" caption="Premium settle date" helpId="Upfront fee settle date" lookup="QDTE" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="UFEESETTDATE" messageID="SWAPCAPFLOORLEG_ROW_UFEESETTDATE" formatter="Date"></row>
+    <row name="UFEESTARTDATE" xmlTag="UFEESTARTDATE" caption="Premium start date" helpId="Upfront fee start date" lookup="QDTE" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="UFEESTARTDATE" messageID="SWAPCAPFLOORLEG_ROW_UFEESTARTDATE" formatter="Date"></row>
+    <row name="UFEEENDDATE" xmlTag="UFEEENDDATE" caption="Premium end date" helpId="Upfront fee end date" lookup="QDTE" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="UFEEENDDATE" messageID="SWAPCAPFLOORLEG_ROW_UFEEENDDATE" formatter="Date"></row>
+    <row name="EMBEDFEEAMT" xmlTag="EMBEDFEEAMT" caption="Embedded fee amt" helpId="Embedded fee amt" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="EMBEDFEEAMT" messageID="SWAPCAPFLOORLEG_ROW_EMBEDFEEAMT"></row>
+    <row name="NETFEEAMT" xmlTag="NETFEEAMT" caption="Net fee amt" helpId="Net fee amt" visible="true" enabled="true" owner="Extended" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="NETFEEAMT" messageID="SWAPCAPFLOORLEG_ROW_NETFEEAMT"></row>
+    <row name="FEESPURCHINT" xmlTag="FEESPURCHINT" caption="Purchase interest" helpId="Purchase interest" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="FEESPURCHINT" messageID="SWAPCAPFLOORLEG_ROW_FEESPURCHINT"></row>
+    <row name="FEESACCRUEDDAYS" xmlTag="FEESACCRUEDDAYS" caption="Accrued days" helpId="Accrued days" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="FEESACCRUEDDAYS" messageID="SWAPCAPFLOORLEG_ROW_FEESACCRUEDDAYS"></row>
+    <row name="FEEPRICEDIFF" xmlTag="FEEPRICEDIFF" caption="Price difference" helpId="Price difference" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="FEEPRICEDIFF" messageID="SWAPCAPFLOORLEG_ROW_FEEPRICEDIFF"></row>
+    <row name="COPYSECSCHD" xmlTag="COPYSECSCHD" caption="Copy und schedule" helpId="Copy und schedule" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="COPYSECSCHD" messageID="SWAPCAPFLOORLEG_ROW_COPYSECSCHD">
+      <cells>
+        <cell defaultValue="No" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Yes"></comboBoxItem>
+            <comboBoxItem value="No"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="MATDATE" xmlTag="MATDATE" caption="Maturity date" helpId="Maturity date" lookup="QDTE" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" decodeType="Date" leaveCellFunctionCode="MATDATE" messageID="SWAPCAPFLOORLEG_ROW_MATDATE" formatter="Date"></row>
+    <row name="FACTORRATE" xmlTag="FACTORRATE" caption="Factor rate" helpId="Factor rate" visible="true" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="FACTORRATE" messageID="SWAPCAPFLOORLEG_ROW_FACTORRATE" formatter="Rate"></row>
+    <row name="BASKETAMT" xmlTag="BASKETAMT" caption="Basket amount" helpId="Basket amount" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="BASKETAMT" messageID="SWAPCAPFLOORLEG_ROW_BASKETAMT" formatter="Amount"></row>
+    <row name="BASKETPRICE" xmlTag="BASKETPRICE" caption="Basket price" helpId="Basket price" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="BASKETPRICE" messageID="SWAPCAPFLOORLEG_ROW_BASKETPRICE"></row>
+    <row name="DIVPERCENT" xmlTag="DIVPERCENT" caption="Dividend percentage" helpId="Dividend percentage" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="DIVPERCENT" messageID="SWAPCAPFLOORLEG_ROW_DIVPERCENT"></row>
+    <row name="DIVPAYMENT" xmlTag="DIVPAYMENT" caption="Dividend payment" helpId="Dividend payment" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="DIVPAYMENT" messageID="SWAPCAPFLOORLEG_ROW_DIVPAYMENT">
+      <cells>
+        <cell defaultValue="EX" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="EX"></comboBoxItem>
+            <comboBoxItem value="EP"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="DIVCCYIND" xmlTag="DIVCCYIND" caption="Dividend ccy ind" helpId="Dividend ccy ind" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="DIVCCYIND" messageID="SWAPCAPFLOORLEG_ROW_DIVCCYIND"></row>
+    <row name="DIVPAYDATEIND" xmlTag="DIVPAYDATEIND" caption="Dividend payment date ind" helpId="Dividend payment date ind" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="DIVPAYDATEIND" messageID="SWAPCAPFLOORLEG_ROW_DIVPAYDATEIND" formatter="Date">
+      <cells>
+        <cell defaultValue="S" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="D"></comboBoxItem>
+            <comboBoxItem value="S"></comboBoxItem>
+            <comboBoxItem value="NS"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="DIVPAYDAYS" xmlTag="DIVPAYDAYS" caption="Dividend payment days" helpId="Dividend payment days" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="DIVPAYDAYS" messageID="SWAPCAPFLOORLEG_ROW_DIVPAYDAYS"></row>
+    <row name="NOTEXCHRATE" xmlTag="NOTEXCHRATE" caption="Notional exchange rate" helpId="Notional exchange rate" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="14" spinButton="true" spinIncrement="1" leaveCellFunctionCode="NOTEXCHRATE" messageID="SWAPCAPFLOORLEG_ROW_NOTEXCHRATE" formatter="Rate"></row>
+    <row name="NOTEXCHTERMS" xmlTag="NOTEXCHTERMS" caption="Notional exchange terms" helpId="Notional exchange terms" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="NOTEXCHTERMS" messageID="SWAPCAPFLOORLEG_ROW_NOTEXCHTERMS">
+      <cells>
+        <cell defaultValue="M" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="D"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="EQUITYTYPE" xmlTag="EQUITYTYPE" caption="Interest Equity Type" helpId="Interest Equity Type" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="12" spinButton="false" leaveCellFunctionCode="EQUITYTYPE" messageID="SWAPCAPFLOORLEG_ROW_EQUITYTYPE">
+      <cells>
+        <cell defaultValue="Index" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Index"></comboBoxItem>
+            <comboBoxItem value="Stock"></comboBoxItem>
+            <comboBoxItem value="Index Basket"></comboBoxItem>
+            <comboBoxItem value="Stock Basket"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="RETURNTYPE" xmlTag="RETURNTYPE" caption="Type of return" helpId="Type of return" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="5" spinButton="false" leaveCellFunctionCode="RETURNTYPE" messageID="SWAPCAPFLOORLEG_ROW_RETURNTYPE">
+      <cells>
+        <cell defaultValue="Price" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Price"></comboBoxItem>
+            <comboBoxItem value="Total"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="BASKDESC" xmlTag="BASKDESC" caption="Basket description" helpId="Basket description" visible="false" enabled="false" owner="Extended" resetDefaults="true" maxLength="70" spinButton="false" leaveCellFunctionCode="BASKDESC" messageID="SWAPCAPFLOORLEG_ROW_BASKDESC"></row>
+    <row name="REPRICEEXCH" xmlTag="REPRICEEXCH" caption="Repricing exchange" helpId="Repricing exchange" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="7" spinButton="false" leaveCellFunctionCode="REPRICEEXCH" messageID="SWAPCAPFLOORLEG_ROW_REPRICEEXCH">
+      <cells>
+        <cell defaultValue="Initial" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Initial"></comboBoxItem>
+            <comboBoxItem value="Spot"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="REPRICEDAYS" xmlTag="REPRICEDAYS" caption="Reprice days" helpId="Reprice days" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="2" spinButton="false" leaveCellFunctionCode="REPRICEDAYS" messageID="SWAPCAPFLOORLEG_ROW_REPRICEDAYS"></row>
+    <row name="VALUETIME" xmlTag="VALUETIME" caption="Valuation time" helpId="Valuation time" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="10" spinButton="false" leaveCellFunctionCode="VALUETIME" messageID="SWAPCAPFLOORLEG_ROW_VALUETIME"></row>
+    <row name="MKTVALUESOURCE" xmlTag="MKTVALUESOURCE" caption="Market value source" helpId="Market value source" visible="false" enabled="true" owner="Extended" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="MKTVALUESOURCE" messageID="SWAPCAPFLOORLEG_ROW_MKTVALUESOURCE">
+      <cells>
+        <cell defaultValue=" " columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value=" "></comboBoxItem>
+            <comboBoxItem value="FinCad"></comboBoxItem>
+            <comboBoxItem value="SavvySoft"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="PREMPURCHINT" xmlTag="PREMPURCHINT" caption="Purchase premium amt" helpId="Purchase premium amt" visible="false" enabled="false" owner="Main" resetDefaults="true" maxLength="29" spinButton="false" leaveCellFunctionCode="PREMPURCHINT" messageID="SWAPCAPFLOORLEG_ROW_PREMPURCHINT"></row>
+    <row name="PREMACCRUEDDAYS" xmlTag="PREMACCRUEDDAYS" caption="Purchase premium accr days" helpId="Purchase premium accr days" visible="false" enabled="false" owner="Main" resetDefaults="true" maxLength="15" spinButton="false" leaveCellFunctionCode="PREMACCRUEDDAYS" messageID="SWAPCAPFLOORLEG_ROW_PREMACCRUEDDAYS"></row>
+    <row name="EXCHPRININD" xmlTag="EXCHPRININD" caption="Exch prin" helpId="Exch prin" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="1" spinButton="false" leaveCellFunctionCode="EXCHPRININD" messageID="SWAPCAPFLOORLEG_ROW_EXCHPRININD">
+      <cells>
+        <cell defaultValue="N" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="B"></comboBoxItem>
+            <comboBoxItem value="M"></comboBoxItem>
+            <comboBoxItem value="V"></comboBoxItem>
+            <comboBoxItem value="N"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="EXCHTERM" xmlTag="EXCHTERM" caption="Exchange term" helpId="Exchange term" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="8" spinButton="false" leaveCellFunctionCode="EXCHTERM" messageID="SWAPCAPFLOORLEG_ROW_EXCHTERM">
+      <cells>
+        <cell>
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Multiply"></comboBoxItem>
+            <comboBoxItem value="Divide"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="EXCHRATE" xmlTag="EXCHRATE" caption="Exchange rate" helpId="Exchange rate" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="14" spinButton="false" leaveCellFunctionCode="EXCHRATE" messageID="SWAPCAPFLOORLEG_ROW_EXCHRATE" formatter="Rate"></row>
+    <row name="DEALRATE" xmlTag="DEALRATE" caption="Deal rate" helpId="Deal rate" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="DEALRATE" messageID="SWAPCAPFLOORLEG_ROW_DEALRATE" formatter="Rate"></row>
+    <row name="DEALTERMS" xmlTag="DEALTERMS" caption="Deal term" helpId="Deal term" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="3" spinButton="false" leaveCellFunctionCode="DEALTERMS" messageID="SWAPCAPFLOORLEG_ROW_DEALTERMS"></row>
+    <row name="LEGTYPE" xmlTag="LEGTYPE" caption="Leg type" helpId="Leg type" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="10" spinButton="false" leaveCellFunctionCode="LEGTYPE" messageID="SWAPCAPFLOORLEG_ROW_LEGTYPE">
+      <cells>
+        <cell defaultValue="Capfloor" columnName="H_Value1">
+          <comboBox dropDownList="true">
+            <comboBoxItem value="Capfloor"></comboBoxItem>
+          </comboBox>
+        </cell>
+      </cells>
+    </row>
+    <row name="LEGSEQ" xmlTag="LEGSEQ" caption="Leg Seq" helpId="Leg Seq" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="10" spinButton="false" leaveCellFunctionCode="LEGSEQ" messageID="SWAPCAPFLOORLEG_ROW_LEGSEQ"></row>
+    <row name="CLASSID" xmlTag="CLASSID" caption="Class Id" helpId="Class Id" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="10" spinButton="false" leaveCellFunctionCode="CLASSID" messageID="SWAPCAPFLOORLEG_ROW_CLASSID"></row>
+    <row name="DELETEID" xmlTag="DELETEID" caption="DELETEID" helpId="DELETEID" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" leaveCellFunctionCode="DELETEID" messageID="SWAPCAPFLOORLEG_ROW_DELETEID"></row>
+    <row name="ACTIVELEG" xmlTag="ACTIVELEG" caption="ACTIVELEG" helpId="ACTIVELEG" visible="false" enabled="true" owner="Main" resetDefaults="true" maxLength="15" spinButton="true" spinIncrement="1" messageID="SWAPCAPFLOORLEG_ROW_ACTIVELEG"></row>
+  </rows>
+</grid>
