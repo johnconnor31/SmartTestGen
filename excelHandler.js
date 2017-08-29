@@ -8,8 +8,10 @@ function writeValues(excelRows){
 	console.log(excelRows.length);
 	excelRows.map(function(row,i){
 		// console.log(row[0]);
-		if(i<200)
+		
+			// console.log(row);
 	 ws.addRow(row);
+	
 	});	
 	// console.log(ws.rows);
 	wb.xlsx.writeFile('D:\\TCGen\\SmartTestGen_new\\TcGenerated.xlsx').then(function(){

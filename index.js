@@ -59,7 +59,6 @@ function generateFunctionalTCs(){
 		for(var key in inputLeg)
 		if(inputLeg.hasOwnProperty(key)&& inputLeg[key]!=='')
 			basicScenario.push(inputLeg[key]);
-		currentTC = basicScenario;
 		var i =0;
 		for(var key1 in inputLeg)
 		{
@@ -92,7 +91,7 @@ function generateFunctionalTCs(){
 						 // console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
 						if(templateFieldArray[k].cells.cell.comboBox.comboBoxItem!=undefined)
 						{
-							console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
+							// console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
 							for(var l=0;l<templateFieldArray[k].cells.cell.comboBox.comboBoxItem.length;l++){
 								combo1.push(templateFieldArray[k].cells.cell.comboBox.comboBoxItem[l].$.value);
 						}
@@ -134,24 +133,25 @@ function generateFunctionalTCs(){
 									
 								}
 							}
-							console.log(combo1.length,combo2.length);
+							// console.log(combo1,combo2);
 								
 							var twoVarCount =0;
-							if(noOfCases<200)
+							if(noOfCases<150)
 							for(var m=0;m<combo1.length;m++)
 							{
 								for(var n=0;n<combo2.length;n++){
-
-									twoVarCount++;
-								updateLegTC(currentTC,key1,combo1[m]);
-								updateLegTC(currentTC,key2,combo2[n]);
+								let tempTC= basicScenario.slice();
+								twoVarCount++;
+								tempTC=updateLegTC(tempTC,key1,combo1[m]);
+								tempTC=updateLegTC(tempTC,key2,combo2[n]);
 								noOfCases++;
 								console.log(noOfCases);
 								vals[noOfCases]=[];
-								console.log(key1+' '+key2+' '+twoVarCount);
-								currentTC.unshift(key1+' '+key2+' ');
-								currentTC.unshift("CF_TC_00"+noOfCases);
-								vals[noOfCases]=currentTC;
+								// console.log(key1+' '+key2+' '+twoVarCount);
+								tempTC.unshift(key1+' '+key2+' '+twoVarCount.toString());
+								tempTC.unshift("CF_TC_00"+noOfCases);
+								console.log(tempTC);
+								vals[noOfCases]=tempTC;
 							}
 						}
 
@@ -165,13 +165,29 @@ function generateFunctionalTCs(){
 			}
 			
 		}
-				// console.log(basicScenario);
+				// console.log(vals);
 
 				// excelDealer.writeValues(vals);
 				writeHeader();
 				excelDealer.writeValues(vals);
 
 
+}
+
+function updateLegTC(TC,xmlTag,val){
+	var pos=headerEnd+1;
+	for(var key in inputLeg){
+		if(xmlTag.toUpperCase() === key.toUpperCase())
+		{
+			// console.log(key.toString());
+			TC[pos]=val;
+		}
+		else
+			pos++;
+	
+	}
+	// console.log(TC);
+	return TC;
 }
 
 
@@ -229,20 +245,6 @@ function generateCases(callBack){
 	callBack();
 
 
-}
-
-function updateLegTC(TC,xmlTag,val){
-	var pos=headerEnd+1;
-	for(var key in inputLeg){
-		if(xmlTag.toUpperCase() === key.toUpperCase())
-		{
-			// console.log(key.toString());
-			TC[pos]=val;
-		}
-		else
-			pos++;
-	
-	}
 }
 
 
