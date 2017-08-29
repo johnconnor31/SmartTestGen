@@ -9,6 +9,9 @@ var templateFieldArray;
 var inputHeader,inputLeg;
 var vals=[],header=[],basicScenario=[],currentTC=[];
 var noOfCases=-1;
+var combo1 =[];
+var combo2=[];
+var headerEnd=-1;
 fs.readFile('D:\\TCGen\\SmartTestGen_new\\CapFloorLeg_template.xml',function(err,str){
 	// console.log(err);
 	// console.log(str);
@@ -37,6 +40,9 @@ fs.readFile('D:\\TCGen\\SmartTestGen_new\\capsandFloors_input.xml','UTF8',functi
 		// 	console.log('and press Enter at the end');
 		// });
 		generateFunctionalTCs();
+		// for(var key in inputLeg)
+		// 	if(inputLeg.hasOwnProperty(key)&&inputLeg[key]!='')
+		// 		console.log(key);
 	
 	});
 });
@@ -47,18 +53,114 @@ function generateFunctionalTCs(){
 		{	
 			// console.log(key,inputHeader[key]);
 			basicScenario.push(inputHeader[key]);
+			headerEnd++;
 		}
 
 		for(var key in inputLeg)
 		if(inputLeg.hasOwnProperty(key)&& inputLeg[key]!=='')
 			basicScenario.push(inputLeg[key]);
+		currentTC = basicScenario;
+		var i =0;
+		for(var key1 in inputLeg)
+		{
+			
+			if(inputLeg.hasOwnProperty(key1)&& inputLeg[key1]!=='')
+			{
+				i++;
+				var k =0;
+				for(k=0;k<templateFieldArray.length;k++)
+				{
+					if(templateFieldArray[k].$.xmlTag === key1)
+						break;
+				}
+					// console.log('at xmltag :'+templateFieldArray[k].$.xmlTag);
+				if(templateFieldArray[k].cells!=undefined || 
+					templateFieldArray[k].$.xmlTag.match(/\w*AMT\b/) || templateFieldArray[k].$.xmlTag.match(/\w*RATE\b/))
+				{
+					// console.log(templateFieldArray[k].$.xmlTag);
+					var j=0;
+					combo1=[];
+					if(templateFieldArray[k].$.xmlTag.match(/\w*AMT\b/) || templateFieldArray[k].$.xmlTag.match(/\w*RATE\b/))
+					{
+						combo1.push(0.000);
+						var num = parseFloat(inputLeg[key1])*-1;
+						combo1.push(num);
+					}
+					else
+					{
+						// console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem[0].$.value,templateFieldArray[k].cells.cell.comboBox.comboBoxItem[1].$.value);
+						 // console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
+						if(templateFieldArray[k].cells.cell.comboBox.comboBoxItem!=undefined)
+						{
+							console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
+							for(var l=0;l<templateFieldArray[k].cells.cell.comboBox.comboBoxItem.length;l++){
+								combo1.push(templateFieldArray[k].cells.cell.comboBox.comboBoxItem[l].$.value);
+						}
+					}
+				}
 
-		// console.log(basicScenario);
 
-		
-		
+
+					// console.log('combolist:' + combo1);
+				if(combo1.length!==0)
+
+					for(var key2 in inputLeg)
+						{
+							combo2=[];
+							if(inputLeg.hasOwnProperty(key2)&& inputLeg[key2]!='')
+									j++;
+								if(i<j){
+										var k =0;
+										for(k=0;k<templateFieldArray.length;k++)
+										{
+											if(templateFieldArray[k].$.xmlTag === key2)
+												break;
+										}
+								if(templateFieldArray[k].$.xmlTag.match(/\w*AMT\b/) || templateFieldArray[k].$.xmlTag.match(/\w*RATE\b/))
+									{
+									combo2.push(0.000);
+									var num = parseFloat(inputLeg[key2])*-1;
+									combo2.push(num);
+								}
+							else
+							{
+						// console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem[0].$.value,templateFieldArray[k].cells.cell.comboBox.comboBoxItem[1].$.value);
+						 // console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
+								if(templateFieldArray[k].cells!=undefined&&templateFieldArray[k].cells.cell.comboBox.comboBoxItem!=undefined)
+								{
+									// console.log(templateFieldArray[k].cells.cell.comboBox.comboBoxItem);
+									for(var l=0;l<templateFieldArray[k].cells.cell.comboBox.comboBoxItem.length;l++)
+										combo2.push(templateFieldArray[k].cells.cell.comboBox.comboBoxItem[l].$.value);
+									
+								}
+							}
+						console.log(combo1.length,combo2.length);
+							for(var m=0;m<combo1.length;m++)
+								for(var n=0;n<combo2.length;n++){
+								updateLegTC(currentTC,key1,combo1[m]);
+								updateLegTC(currentTC,key2,combo2[n]);
+								noOfCases++;
+								console.log(noOfCases);
+								vals[noOfCases]=[];
+								currentTC.unshift("FRA_TC_000"+noOfCases);
+								vals[noOfCases]=currentTC;
+							}
+
+					}
+
+
+					}
+
+				}
+	
+			}
+			
+		}
+				// console.log(basicScenario);
+
 
 }
+		
 function generateCases(callBack){
 	// console.log(templateFields);
 	writeHeader();
@@ -97,6 +199,19 @@ function generateCases(callBack){
 
 }
 
+function updateLegTC(TC,xmlTag,val){
+	var pos=headerEnd+1;
+	for(var key in inputLeg){
+		if(xmlTag.toUpperCase() === key.toUpperCase())
+		{
+			// console.log(key.toString());
+			TC[pos]=val;
+		}
+		else
+			pos++;
+	
+	}
+}
 
 
 function updateTC(TC,xmlTag,val){
