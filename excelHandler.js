@@ -5,13 +5,14 @@ var ws= wb.addWorksheet('checking');
 var columns=[];
 // console.log(ws);
 function writeValues(excelRows){
-	// console.log(ws.columns);
+	console.log(excelRows.length);
 	excelRows.map(function(row,i){
 		// console.log(row[0]);
+		if(i<200)
 	 ws.addRow(row);
 	});	
 	// console.log(ws.rows);
-	wb.xlsx.writeFile('TcGenerated.xlsx').then(function(){
+	wb.xlsx.writeFile('D:\\TCGen\\SmartTestGen_new\\TcGenerated.xlsx').then(function(){
 		console.log('excel printed');	
 	});
 }

@@ -134,17 +134,26 @@ function generateFunctionalTCs(){
 									
 								}
 							}
-						console.log(combo1.length,combo2.length);
+							console.log(combo1.length,combo2.length);
+								
+							var twoVarCount =0;
+							if(noOfCases<200)
 							for(var m=0;m<combo1.length;m++)
+							{
 								for(var n=0;n<combo2.length;n++){
+
+									twoVarCount++;
 								updateLegTC(currentTC,key1,combo1[m]);
 								updateLegTC(currentTC,key2,combo2[n]);
 								noOfCases++;
 								console.log(noOfCases);
 								vals[noOfCases]=[];
-								currentTC.unshift("FRA_TC_000"+noOfCases);
+								console.log(key1+' '+key2+' '+twoVarCount);
+								currentTC.unshift(key1+' '+key2+' ');
+								currentTC.unshift("CF_TC_00"+noOfCases);
 								vals[noOfCases]=currentTC;
 							}
+						}
 
 					}
 
@@ -158,16 +167,38 @@ function generateFunctionalTCs(){
 		}
 				// console.log(basicScenario);
 
+				// excelDealer.writeValues(vals);
+				writeHeader();
+				excelDealer.writeValues(vals);
+
 
 }
+
+
 		
+function writeHeader(){
+	header.push({Name:"TEST CONDITION"});
+	header.push({Name:"TEST DESCRIPTION"});
+	for(var key in inputHeader)
+		if(inputHeader.hasOwnProperty(key)&& inputHeader[key]!=='' &&inputHeader[key]!=='\r\n')
+			header.push({
+				Name:key,
+			});
+	for(var key in inputLeg)
+		if(inputLeg.hasOwnProperty(key)&& inputLeg[key]!=='')
+			header.push({
+				Name:key,
+			});
+
+	excelDealer.writeHeader(header);
+}
 function generateCases(callBack){
 	// console.log(templateFields);
 	writeHeader();
 	var tagName;
 	var options;
 
-	for(var key in inputParams)
+	for(var key in inputHeader)
 		if(inputParams.hasOwnProperty(key))
 			basicScenario.push(inputParams[key]);
 
@@ -196,6 +227,7 @@ function generateCases(callBack){
 			// console.log(vals);
 		});
 	callBack();
+
 
 }
 
@@ -229,16 +261,7 @@ function updateTC(TC,xmlTag,val){
 	// console.log(TC);
 
 }
-function writeHeader(){
-	header.push({Name:"Test Description"});
-	for(var key in inputParams)
-		if(inputParams.hasOwnProperty(key))
-			header.push({
-				Name:key,
-			});
 
-	excelDealer.writeHeader(header);
-}
 function getOptions(field){
 	if(field.cells!=undefined)
 			if(field.cells["cell"].comboBox!=undefined)
